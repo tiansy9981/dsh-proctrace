@@ -1,0 +1,71 @@
+{
+  "_comment": "Audit an AI coding agent. Replace the workspace with your project path.",
+  "interval": 0.2,
+  "tree_refresh": 0.5,
+  "policy_refresh": 2.0,
+  "max_events": 20000,
+  "max_processes": 4096,
+  "show_initial": false,
+  "show_nonfile": false,
+  "protected": [],
+  "exclude": [
+    {
+      "name": "WindowServer"
+    },
+    {
+      "name": "kernel_task"
+    }
+  ],
+  "audit": {
+    "enabled": true,
+    "workspaces": [
+      "."
+    ],
+    "allow_paths": [],
+    "deny_paths": [
+      "~/.zsh_history",
+      "~/.bash_history"
+    ],
+    "ignore_paths": [],
+    "outside_workspace": true,
+    "use_defaults": true,
+    "include_stdio": false
+  },
+  "network": {
+    "enabled": true,
+    "include_unix": true,
+    "db_ports": {},
+    "ignore_ports": []
+  },
+  "database": {
+    "enabled": true,
+    "sqlite_suffixes": [
+      ".db",
+      ".sqlite",
+      ".sqlite3",
+      ".duckdb",
+      ".mdb",
+      ".accdb"
+    ]
+  },
+  "kernel": {
+    "enabled": false,
+    "mark_paths": [
+      "/"
+    ],
+    "include_writes": true
+  },
+  "db_audit": {
+    "enabled": false,
+    "from_start": false,
+    "sources": [],
+    "sensitive_tables": [
+      "users",
+      "credentials",
+      "tokens",
+      "secrets",
+      "audit_log",
+      "payment_cards"
+    ]
+  }
+}

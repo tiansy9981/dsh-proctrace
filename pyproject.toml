@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "proctrace"
+version = "0.2.0"
+description = "Live per-process file access and AI-agent path audit for macOS and Linux"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "proctrace contributors"}]
+dependencies = ["psutil>=5.9,<8"]
+
+[project.scripts]
+proctrace = "proctrace.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"

@@ -1,0 +1,4 @@
+- insert:
+    - id: dsh-proctrace
+      name: '@local/dsh-proctrace'
+      config: {}

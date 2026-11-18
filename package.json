@@ -1,0 +1,50 @@
+{
+  "name": "@local/dsh-proctrace",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Audit file, network, and database activity of a process tree from DeepSeek Harness.",
+  "type": "module",
+  "main": "index.js",
+  "icon": "./icon.svg",
+  "exports": {
+    ".": "./index.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "docs",
+    "icon.svg",
+    "proctrace",
+    "pyproject.toml",
+    "requirements.txt",
+    "requirements-dev.txt",
+    "src/**/*.py",
+    "shim/**/*.c",
+    "scripts/**/*.sh",
+    "build",
+    "LICENSE",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tiansy9981/dsh-proctrace.git"
+  },
+  "homepage": "https://github.com/tiansy9981/dsh-proctrace#readme",
+  "bugs": {
+    "url": "https://github.com/tiansy9981/dsh-proctrace/issues"
+  },
+  "license": "MIT"
+}

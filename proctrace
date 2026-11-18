@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# proctrace launcher: uses the project venv when present, otherwise system Python.
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+if [[ -x "$ROOT/.venv/bin/python" ]]; then
+  PY="$ROOT/.venv/bin/python"
+else
+  PY="$(command -v python3 || true)"
+  if [[ -z "$PY" ]]; then
+    echo "proctrace: python3 not found; install Python 3.9+ first" >&2
+    exit 1
+  fi
+fi
+
+if ! "$PY" -c 'import psutil' >/dev/null 2>&1; then
+  echo "proctrace: psutil is missing for $PY" >&2
+  echo "install: $PY -m pip install 'psutil>=5.9,<8'" >&2
+  exit 1
+fi
+
+exec env PYTHONPATH="$ROOT/src${PYTHONPATH:+:$PYTHONPATH}" "$PY" -m proctrace "$@"

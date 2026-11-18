@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "ProcTrace",
+    "description": "Audit file, network, and database activity of a process tree from the agent chat.",
+    "detail": "docs/DETAIL.md"
+  }
+}

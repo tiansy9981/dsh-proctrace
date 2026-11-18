@@ -1,0 +1,80 @@
+{
+  "_comment": "Rules are AND-ed. name/exe use glob, cmdline uses Python regex. See README.",
+  "interval": 0.5,
+  "max_events": 5000,
+  "show_initial": false,
+  "show_nonfile": false,
+  "policy_refresh": 2.0,
+  "tree_refresh": 1.0,
+  "max_processes": 2048,
+  "protected": [
+    {
+      "pid": 1234
+    },
+    {
+      "name": "1Password"
+    },
+    {
+      "name": "ssh-agent"
+    },
+    {
+      "exe": "/usr/bin/security",
+      "uid": 501
+    }
+  ],
+  "exclude": [
+    {
+      "name": "WindowServer"
+    },
+    {
+      "name": "kernel_task"
+    }
+  ],
+  "audit": {
+    "enabled": false,
+    "workspaces": [],
+    "allow_paths": [],
+    "deny_paths": [],
+    "ignore_paths": [],
+    "outside_workspace": true,
+    "use_defaults": true,
+    "include_stdio": false
+  },
+  "network": {
+    "enabled": false,
+    "include_unix": true,
+    "db_ports": {},
+    "ignore_ports": []
+  },
+  "database": {
+    "enabled": false,
+    "sqlite_suffixes": [
+      ".db",
+      ".sqlite",
+      ".sqlite3",
+      ".duckdb",
+      ".mdb",
+      ".accdb"
+    ]
+  },
+  "kernel": {
+    "enabled": false,
+    "mark_paths": [
+      "/"
+    ],
+    "include_writes": true
+  },
+  "db_audit": {
+    "enabled": false,
+    "from_start": false,
+    "sources": [],
+    "sensitive_tables": [
+      "users",
+      "credentials",
+      "tokens",
+      "secrets",
+      "audit_log",
+      "payment_cards"
+    ]
+  }
+}

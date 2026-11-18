@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "ProcTrace 进程审计",
+    "description": "在对话中审计进程树的文件、网络和数据库访问。",
+    "detail": "docs/DETAIL.md"
+  }
+}

@@ -1,0 +1,24 @@
+proctrace  LIVE/AUDIT  target=claude 67884  backend=macos-libproc  0.20s
+procs=1    fds=2    events=2     alerts=1    scan=16.9ms (max 16.9)  filter=all
+PID     PPID   NAME                   FD |TIME      PID    PROCESS          EVENT  DETAIL
+67884   67882    Python                2 |20:07:02 67884  Python         OPEN   4    ...ptpreview/outside.txt
+                                         |20:07:02 67884  Python         VIOL outside  ...preview/outside.txt
+                                         |
+                                         |
+                                         |
+                                         |
+                                         |
+                                         |
+                                         |
+                                         |
+                                         |
+                                         |
+                                         |
+                                         |
+                                         |
+                                         |
+                                         |
+                                         |
+                                         |
+q quit  space pause  v files  n net  f filter  / search  enter pid  [ ] scroll  c clear  e export  a types  …
+audit=on workspace=/tmp/ptpreview/ws deny_rules=0 outside=on
